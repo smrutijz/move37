@@ -114,7 +114,7 @@ def monte_carlo(grid):
   for s in policy.keys():
     V[s] = max_dict(Q[s])[1]
   
-  return V, policy, deltas
+  return V, policy, deltas, Q
 
 
 if __name__ == '__main__':
@@ -124,7 +124,7 @@ if __name__ == '__main__':
   print("rewards:")
   print_values(grid.rewards, grid)
 
-  V, policy, deltas = monte_carlo(grid)
+  V, policy, deltas, Q = monte_carlo(grid)
 
   print("final values:")
   print_values(V, grid)
